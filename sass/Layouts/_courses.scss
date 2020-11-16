@@ -1,0 +1,130 @@
+.courses {
+    padding: $pd-2;
+    .courses__content {
+        width: 80%;
+        height: auto;
+        margin: auto;
+        .row{
+            flex-wrap: nowrap;
+            .courses__left {
+                background: $color-gray-5;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .courses__text {
+                    padding: $pd-2;
+                    h2 {
+                        @include styleText($color-black-0, $fs-2, $fw-bold-1);
+                    }
+                    p {
+                        @include styleText($color-black-0, $fs-0, $fw-normal);
+                    }
+                }
+            }
+            .courses__right {
+                .nav {
+                    justify-content: flex-start;
+                    .nav-link {
+                        @include styleText($color-black-0, $fs-0, $fw-normal);
+                        border: none;
+                        &.active {
+                            border-bottom: 5px solid $color-blue;
+                        }
+                    }
+                }
+            }
+            .tab-content {
+                .card {
+                    cursor: pointer;
+                    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                    .card-title {
+                        height: 35px;
+                        overflow: hidden;
+                        white-space: normal;
+                        text-overflow: ellipsis;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box!important;
+                        @include styleText($color-black-0, $fs-0, $fw-bold-1);
+                    }
+                    .card-text {
+                        height: 35px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        @include styleText($color-black-0, $fs-0, $fw-normal);
+                    }
+                    .rating {
+                        height: 20px;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        align-items: center;
+                        .rating__star {
+                            @include styleText($color-yellow, $fs-1, $fw-normal);
+                        }
+                        p {
+                            @include styleText($color-black-light, $fs-0, $fw-bold-1);
+                        }
+                        span {
+                            @include styleText($color-gray-4, $fs-1, $fw-normal);
+                        }
+                    }
+                    .price {
+                        justify-content: flex-end;
+                        align-items: center;
+                        span {
+                            text-decoration: s;
+                            @include styleText($color-black-0, $fs-1, $fw-normal);
+                        }
+                        p {
+                            @include styleText($color-black-0, $fs-2, $fw-bold);
+                        }
+                    }
+                }
+            }
+            .owl-nav {
+                button {
+                    font-size: 50px;
+                    background-color: $color-white-0;
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                    border-radius: 50%;
+                    color: $color-blue;
+                    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                    &:focus {
+                        box-shadow: 0 0 10px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                        outline: none;
+                    }
+                    &:hover {
+                        background-color: $color-white-0;
+                        color: $color-blue;
+                    }
+                }
+                .owl-next {
+                    position: absolute;
+                    top: 33%;
+                    right: -35px;
+                }
+                .owl-prev {
+                    position: absolute;
+                    top: 33%;
+                    left: -35px;
+                }
+            }
+        }
+        
+    }
+}
+//RESPONSIVE
+.courses{
+    @include responsive( 'large'){
+        .courses__left{
+            display: none !important;
+        }
+        .courses__right{
+            max-width: 100%;
+        }
+    }
+}

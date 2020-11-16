@@ -1,0 +1,53 @@
+.company {
+    text-align: center;
+    background: $color-gray-5;
+    .company__content{
+        h2{
+            @include styleText($color-gray-4,$fs-1,$fw-normal)
+        }
+        .company__logo{
+            margin-top: $mg-2;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            img{
+                cursor: pointer;
+                margin: 0 $mg-2;
+            }
+        }
+        .company__item{
+            padding: ($pd-2 * 2) 0;
+            display: flex;
+            justify-content: space-between;
+            margin-top: $mg-2;
+            .company__item__left{
+                width: 50%;
+                border-right: 1px solid $color-gray-6;
+                .left{
+                    width: 50%;
+                    margin: 0 auto;
+                }
+                .right{
+                    width: 50%;
+                    margin: 0 auto;
+                }
+            }
+            .company__item__right{
+                width: 50%;
+            }
+            h2{
+                cursor: pointer;
+                @include styleText($color-black-light,$fs-2,$fw-bold-1)
+            }
+            p{
+               @include styleText($color-black-0,$fs-0,$fw-normal) 
+            }
+            button{
+                @include styleButton($color-trans,$color-red-0,$pd-1 + 1,$pd-1 + 2,$border-radius);
+                &:hover{
+                    background: $color-red-2;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+.comment {
+    background: $color-gray-5;
+    .comment__content {
+        padding: $pd-2 0;
+        width: 80%;
+        margin: 0 auto;
+        h1 {
+            @include styleText($color-black-0, $fs-3, $fw-bold-1);
+        }
+        .comment__list{
+            padding: $pd-2 0;
+            .comment__item{
+                height: 300px;
+                padding: ($pd-2 + 10) $pd-2;
+                background: $color-white-0;
+                box-shadow: 0 1px 3px 0 rgba(20,23,28,.15);
+                .comment__item__img{
+                    display: flex;
+                    align-items: center;
+                    img{
+                        height: 64px;
+                        width: 64px;
+                        border-radius: 50%;
+                    }
+                    h3{
+                        @include styleText($color-black-0,$fs-0,$fw-bold-1)
+                    }
+                }
+                .comment__item__text{
+                    padding: $pd-2;
+                    p{
+                        @include styleText($color-black-0,$fs-0,$fw-normal)
+                    }
+                }
+            }
+            .owl-nav {
+                button {
+                    font-size: 50px;
+                    background-color: $color-white-0;
+                    height: 50px;
+                    width: 50px;
+                    line-height: 50px;
+                    border-radius: 50%;
+                    color: $color-blue;
+                    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                    &:focus {
+                        box-shadow: 0 0 10px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                        outline: none;
+                    }
+                    &:hover {
+                        background-color: $color-white-0;
+                        color: $color-blue;
+                    }
+                }
+                .owl-next {
+                    position: absolute;
+                    top: 33%;
+                    right: -35px;
+                }
+                .owl-prev {
+                    position: absolute;
+                    top: 33%;
+                    left: -35px;
+                }
+            }
+        }
+    }
+}

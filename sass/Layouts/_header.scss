@@ -1,0 +1,147 @@
+header{
+    @include styleText($color-black-light,$fs-1,$fw-normal);
+    .navbar{
+        max-width: 1440px;
+        margin: auto;
+        flex-wrap: unset;
+        i{
+            font-size: 20px;
+        }
+        .hiddenIcon{
+            display: none;
+        }
+    }
+}
+
+.header__left{
+    display: flex;
+    align-items: center;
+    .navbar-brand{
+        margin: 0;
+        // nếu không khái báo thì mặc định flex-grow =0
+        // flex-grow chia khoảng trống còn dư cho những thành phần con trong div cha
+        flex-grow: 0;
+        img{
+            width: 110px;
+        }
+    }
+    .header__cato{
+        flex-grow: 0;
+        margin: 0 10px;
+    }
+    .header__form{
+        flex-grow: 1;
+        .form-control{
+            border: none;
+            background-color: $color-white-cream;
+            transition: none;
+            &:focus {
+                border: 1px solid $color-gray-3;
+                border-right: none;
+                background-color: $color-white-0;
+                box-shadow: none;
+            }
+            &:focus + .input-group-append{
+                .input-group-text{
+                    background-color: $color-white-0;
+                    border: 1px solid $color-gray-3;
+                    border-left: none;
+                    &:hover{
+                        background-color: $color-red-0;
+                        color: $color-white-cream;
+                    }
+                }
+            }
+        }
+        .input-group-append{
+            .input-group-text{
+                border: none;
+                background-color: $color-white-cream;
+                color: $color-red-0;
+                &:hover{
+                    background-color: $color-red-0;
+                    color: $color-white-cream;
+                }
+            }
+        }
+    }
+}
+.header__right{
+    .navbar-nav{
+        align-items: center;
+        justify-content: flex-end;
+        flex-direction: unset;
+        .nav-link{
+            @include styleText($color-black-light,$fs-1,$fw-normal);
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all 0.5s;
+            border-radius: 5px;
+            padding: $pd-1 $pd-2 ;
+            &:hover{
+                background-color:$color-white-cream;
+                border: 1px solid $color-gray-3;
+            }
+        }
+        .line{
+            height: 40px;
+            border-left: 1px solid #cbcccc;
+        }
+        .business{
+            position: relative;
+            .header__overlay{
+                position: absolute;
+                display: none;
+                right: 0;
+                top: 45px;
+                z-index: 2;
+                background: $color-white-0;
+                padding: $pd-2;
+                width: 300px;
+                box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+                h5{
+                    @include styleText($color-blue,$fs-0,$fw-bold)
+                }
+            }
+            &:hover {
+                .header__overlay{
+                    display: block;
+                }
+            }
+        }
+        .teach{
+            @extend .business
+        }
+    } 
+}
+// RESPONSIVE
+header{
+    .navbar{
+        @include responsive("medium"){
+            .hiddenIcon{
+                display: flex;
+            }
+        }
+    }
+}
+.header__left{
+    @include responsive("medium"){
+        justify-content: center;
+        .header__cato, .header__form{
+            display: none;
+        }
+    }
+}
+.header__right{
+    @include responsive("extra-large"){
+        .business, .teach, .line{
+            display: none;
+        }
+    }
+    @include responsive("medium"){
+        .btnGroup{
+            display: none;
+        } 
+    }
+}
+

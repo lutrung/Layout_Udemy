@@ -1,0 +1,39 @@
+.intro {
+    background: linear-gradient(-45deg, #ec5252 0%, #6e1a52 100%);
+    padding: $pd-2;
+    .row {
+        .intro__item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                @include styleText($color-white-0, $fs-4, $fw-bold-0);
+            }
+            p:first-child {
+                @include styleText($color-white-0, $fs-2 - 3, $fw-bold-0);
+            }
+            p:nth-child(2) {
+                @include styleText($color-white-0, $fs-0, $fw-normal);
+            }
+        }
+    }
+}
+//RESPONSIVE
+.intro {
+    @include responsive("extra-large") {
+        .intro__icon {
+            display: none;
+        }
+        .intro__text {
+            text-align: center;
+        }
+    }
+    @include responsive("medium") {
+        .intro__content{
+            .intro__item {
+                display: none;
+            }
+        }
+        background: none;
+    }
+}

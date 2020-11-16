@@ -1,0 +1,64 @@
+.carousel{
+    background-image: url('../images/cover.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 500px;
+    .carousel__content{
+        height: 100%;
+        width: 80%;
+        margin: auto;
+        position: relative;
+        .carousel__mid{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 45%;
+            transform: translateY(-50%);
+        }
+    }
+} 
+.carousel__content{
+    h1{
+        @include styleText($color-white-0,$fs-4,$fw-bold-1)
+    }
+    p{
+        @include styleText($color-white-0,$fs-2 - 2,$fw-normal)
+    }
+    .header__form{
+        .form-control{
+            border: none;
+            background-color: $color-white-0;
+            padding: $pd-2 + 10;
+            &:focus {
+                border-right: none;
+                background-color: $color-white-0;
+                box-shadow: none;
+            }
+            &:focus + .input-group-append{
+                .input-group-text{
+                    background-color: $color-white-0;
+                    border: none;
+                    &:hover{
+                        background-color: $color-red-0;
+                        color: $color-white-cream;
+                    }
+                }
+            }
+            &::placeholder{
+                @include styleText($color-gray-2,$fs-2,$fw-normal)
+            }
+        }
+        .input-group-append{
+            .input-group-text{
+                border: none;
+                background-color: $color-white-0;
+                color: $color-red-0;
+                &:hover{
+                    background-color: $color-red-0;
+                    color: $color-white-cream;
+                }
+            }
+        }
+    }
+}     
